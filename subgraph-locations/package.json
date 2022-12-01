@@ -1,0 +1,21 @@
+{
+  "name": "subgraph-locations",
+  "type": "module",
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "rimraf dist && NODE_ENV=production node worker.build.js",
+    "deploy": "wrangler publish",
+    "generate": "graphql-codegen --config ./codegen.ts",
+    "lint": "eslint .",
+    "prettier": "prettier --check .",
+    "prettier:fix": "prettier --write .",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@apollo/server": "^4.2.2",
+    "@apollo/subgraph": "^2.2.1",
+    "apollo-server-integrations-cloudflare-workers": "^0.1.2",
+    "graphql": "^16.6.0",
+    "graphql-tag": "^2.12.6"
+  }
+}

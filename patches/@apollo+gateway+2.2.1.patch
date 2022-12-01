@@ -1,0 +1,36 @@
+diff --git a/node_modules/@apollo/gateway/dist/datasources/RemoteGraphQLDataSource.js b/node_modules/@apollo/gateway/dist/datasources/RemoteGraphQLDataSource.js
+index c4e89fa..7990033 100644
+--- a/node_modules/@apollo/gateway/dist/datasources/RemoteGraphQLDataSource.js
++++ b/node_modules/@apollo/gateway/dist/datasources/RemoteGraphQLDataSource.js
+@@ -8,17 +8,13 @@ const predicates_1 = require("../utilities/predicates");
+ const types_1 = require("./types");
+ const utils_createhash_1 = require("@apollo/utils.createhash");
+ const parseCacheControlHeader_1 = require("./parseCacheControlHeader");
+-const make_fetch_happen_1 = __importDefault(require("make-fetch-happen"));
+ const node_fetch_1 = require("node-fetch");
+ const graphql_1 = require("graphql");
+ class RemoteGraphQLDataSource {
+     constructor(config) {
+         this.apq = false;
+         this.honorSubgraphCacheControlHeader = true;
+-        this.fetcher = make_fetch_happen_1.default.defaults({
+-            maxSockets: Infinity,
+-            retry: false,
+-        });
++        this.fetcher = node_fetch_1;
+         if (config) {
+             return Object.assign(this, config);
+         }
+diff --git a/node_modules/@apollo/gateway/dist/supergraphManagers/UplinkSupergraphManager/index.js b/node_modules/@apollo/gateway/dist/supergraphManagers/UplinkSupergraphManager/index.js
+index 5915b5c..130c911 100644
+--- a/node_modules/@apollo/gateway/dist/supergraphManagers/UplinkSupergraphManager/index.js
++++ b/node_modules/@apollo/gateway/dist/supergraphManagers/UplinkSupergraphManager/index.js
+@@ -27,7 +27,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
+ };
+ Object.defineProperty(exports, "__esModule", { value: true });
+ exports.UplinkSupergraphManager = void 0;
+-const makeFetchHappen = __importStar(require("make-fetch-happen"));
++const makeFetchHappen = require("node-fetch");
+ const resolvable_1 = __importDefault(require("@josephg/resolvable"));
+ const logger_1 = require("../../logger");
+ const loadSupergraphSdlFromStorage_1 = require("./loadSupergraphSdlFromStorage");

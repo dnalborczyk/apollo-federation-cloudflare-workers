@@ -1,0 +1,20 @@
+{
+  "name": "federation-supergraph-gateway",
+  "main": "./dist/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "rimraf dist && NODE_ENV=production node worker.build.js",
+    "deploy": "wrangler publish",
+    "lint": "eslint .",
+    "prettier": "prettier --check .",
+    "prettier:fix": "prettier --write .",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@apollo/gateway": "^2.2.1",
+    "@apollo/server": "^4.2.2",
+    "apollo-server-integrations-cloudflare-workers": "^0.1.2",
+    "cloudflare-workers-graphql-datasource": "^0.1.1",
+    "graphql": "^16.6.0"
+  }
+}

@@ -1,0 +1,41 @@
+diff --git a/node_modules/@apollo/server/dist/esm/plugin/usageReporting/plugin.js b/node_modules/@apollo/server/dist/esm/plugin/usageReporting/plugin.js
+index cf06596..b39a609 100644
+--- a/node_modules/@apollo/server/dist/esm/plugin/usageReporting/plugin.js
++++ b/node_modules/@apollo/server/dist/esm/plugin/usageReporting/plugin.js
+@@ -5,7 +5,6 @@ import { printSchema } from 'graphql';
+ import { AbortController } from 'node-abort-controller';
+ import fetch from 'node-fetch';
+ import os from 'os';
+-import { promisify } from 'util';
+ import { gzip } from 'zlib';
+ import { internalPlugin } from '../../internalPlugin.js';
+ import { dateToProtoTimestamp, TraceTreeBuilder } from '../traceTreeBuilder.js';
+@@ -16,7 +15,6 @@ import { makeTraceDetails } from './traceDetails.js';
+ import { packageVersion } from '../../generated/packageVersion.js';
+ import { computeCoreSchemaHash } from '../../utils/computeCoreSchemaHash.js';
+ import { schemaIsSubgraph } from '../schemaIsSubgraph.js';
+-const gzipPromise = promisify(gzip);
+ const reportHeaderDefaults = {
+     hostname: os.hostname(),
+     agentVersion: `@apollo/server@${packageVersion}`,
+@@ -148,7 +146,7 @@ export function ApolloServerPluginUsageReporting(options = Object.create(null))
+                     const decodedReport = Report.decode(message);
+                     logger.info(`Apollo usage report: ${JSON.stringify(decodedReport.toJSON())}`);
+                 }
+-                const compressed = await gzipPromise(message);
++                const compressed = await new Promise((resolve, reject) => gzip(message, (error, foo) => error ? reject(error) : resolve(foo)));
+                 message = null;
+                 const fetcher = options.fetcher ?? fetch;
+                 const response = await retry(async () => {
+diff --git a/node_modules/@apollo/server/dist/esm/runHttpQuery.js b/node_modules/@apollo/server/dist/esm/runHttpQuery.js
+index f977394..025f597 100644
+--- a/node_modules/@apollo/server/dist/esm/runHttpQuery.js
++++ b/node_modules/@apollo/server/dist/esm/runHttpQuery.js
+@@ -1,7 +1,6 @@
+ import { chooseContentTypeForSingleResultResponse, internalExecuteOperation, MEDIA_TYPES, } from './ApolloServer.js';
+ import { Kind } from 'graphql';
+ import { BadRequestError } from './internalErrorClasses.js';
+-import { URLSearchParams } from 'url';
+ import Negotiator from 'negotiator';
+ import { HeaderMap } from './utils/HeaderMap.js';
+ function fieldIfString(o, fieldName) {

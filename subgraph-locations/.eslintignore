@@ -1,0 +1,6 @@
+dist
+node_modules
+
+codegen.ts
+src/types/schema.generated.ts
+worker.build.js

@@ -1,0 +1,7 @@
+name = "subgraph-reviews"
+main = "./dist/index.js"
+
+compatibility_date = "2022-11-30"
+
+[vars]
+GRAPHQL_PATH = "/graphql"
