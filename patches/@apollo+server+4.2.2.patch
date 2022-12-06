@@ -23,7 +23,7 @@ index cf06596..b39a609 100644
                      logger.info(`Apollo usage report: ${JSON.stringify(decodedReport.toJSON())}`);
                  }
 -                const compressed = await gzipPromise(message);
-+                const compressed = await new Promise((resolve, reject) => gzip(message, (error, foo) => error ? reject(error) : resolve(foo)));
++                const compressed = await new Promise((resolve, reject) => gzip(message, (error, result) => error ? reject(error) : resolve(result)));
                  message = null;
                  const fetcher = options.fetcher ?? fetch;
                  const response = await retry(async () => {
