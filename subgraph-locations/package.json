@@ -12,8 +12,8 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@apollo/server": "^4.2.2",
-    "@apollo/subgraph": "^2.2.1",
+    "@apollo/server": "^4.3.0",
+    "@apollo/subgraph": "^2.2.2",
     "apollo-server-integrations-cloudflare-workers": "^0.1.2",
     "graphql": "^16.6.0",
     "graphql-tag": "^2.12.6"
