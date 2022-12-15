@@ -1,8 +1,10 @@
 {
   "name": "apollo-federaion-cloudflare-workers",
   "scripts": {
+    "build": "npm run build --workspaces",
     "build:schema": "rover supergraph compose --config ./supergraph.yaml > supergraph.graphql",
-    "postinstall": "patch-package"
+    "postinstall": "patch-package",
+    "publish": "npm run publish --workspaces"
   },
   "repository": {
     "type": "git",
