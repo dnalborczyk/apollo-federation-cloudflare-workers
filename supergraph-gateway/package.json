@@ -4,10 +4,10 @@
   "type": "module",
   "scripts": {
     "build": "rimraf dist && NODE_ENV=production node worker.build.js",
-    "deploy": "wrangler publish",
     "lint": "eslint .",
     "prettier": "prettier --check .",
     "prettier:fix": "prettier --write .",
+    "publish": "wrangler publish",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

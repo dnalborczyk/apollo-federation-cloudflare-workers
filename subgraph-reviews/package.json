@@ -4,11 +4,11 @@
   "main": "./dist/index.js",
   "scripts": {
     "build": "rimraf dist && NODE_ENV=production node worker.build.js",
-    "deploy": "wrangler publish",
     "generate": "graphql-codegen --config ./codegen.ts",
     "lint": "eslint .",
     "prettier": "prettier --check .",
     "prettier:fix": "prettier --write .",
+    "publish": "wrangler publish",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
