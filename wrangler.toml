@@ -1,0 +1,6 @@
+name = "apollo-federation-supergraph"
+
+[miniflare.mounts]
+subgraph-locations = "./subgraph-locations"
+subgraph-reviews = "./subgraph-reviews"
+federation-supergraph-gateway = "./supergraph-gateway"
