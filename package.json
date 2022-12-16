@@ -16,9 +16,9 @@
   },
   "homepage": "https://github.com/dnalborczyk/apollo-server-cloudflare-workers#readme",
   "workspaces": [
-    "supergraph-gateway",
     "subgraph-locations",
-    "subgraph-reviews"
+    "subgraph-reviews",
+    "supergraph-gateway"
   ],
   "devDependencies": {
     "@apollo/rover": "^0.10.0",
