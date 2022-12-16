@@ -10,3 +10,9 @@ services = [
 
 # [vars]
 # GRAPHQL_PATH = "/graphql"
+
+[build.upload]
+format = "modules"
+
+[miniflare]
+route = "http://127.0.0.1/graphql*"

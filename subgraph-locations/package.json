@@ -1,7 +1,7 @@
 {
   "name": "subgraph-locations",
   "type": "module",
-  "main": "./dist/index.js",
+  "module": "./dist/index.js",
   "scripts": {
     "build": "rimraf dist && NODE_ENV=production node worker.build.js",
     "generate": "graphql-codegen --config ./codegen.ts",

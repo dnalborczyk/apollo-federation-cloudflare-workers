@@ -1,6 +1,6 @@
 {
   "name": "federation-supergraph-gateway",
-  "main": "./dist/index.js",
+  "module": "./dist/index.js",
   "type": "module",
   "scripts": {
     "build": "rimraf dist && NODE_ENV=production node worker.build.js",
