@@ -5,6 +5,8 @@
     "build:schema": "rover supergraph compose --config ./supergraph.yaml > supergraph.graphql",
     "lint": "npm run lint --workspaces",
     "postinstall": "patch-package",
+    "prettier": "npm run prettier --workspaces",
+    "prettier:fix": "npm run prettier:fix --workspaces",
     "publish": "npm run publish --workspaces",
     "start": "npx miniflare --modules"
   },
