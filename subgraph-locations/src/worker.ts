@@ -39,6 +39,6 @@ export default {
       })
     }
 
-    return handler(request.clone(), environment, context)
+    return handler(request, environment, context)
   },
 }
