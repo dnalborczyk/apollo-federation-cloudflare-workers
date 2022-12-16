@@ -3,6 +3,7 @@
   "scripts": {
     "build": "npm run build --workspaces",
     "build:schema": "rover supergraph compose --config ./supergraph.yaml > supergraph.graphql",
+    "lint": "npm run lint --workspaces",
     "postinstall": "patch-package",
     "publish": "npm run publish --workspaces",
     "start": "npx miniflare --modules"
