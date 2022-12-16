@@ -50,9 +50,9 @@ export default {
 
       handler = startServerAndCreateCloudflareWorkersHandler<Environment>(
         apolloServer,
-        {
-          path: environment.GRAPHQL_PATH,
-        },
+        // {
+        //   path: environment.GRAPHQL_PATH,
+        // },
       )
     }
 

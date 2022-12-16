@@ -8,5 +8,5 @@ services = [
   { binding = "subgraphReviewsService", service = "subgraph-reviews" }
 ]
 
-[vars]
-GRAPHQL_PATH = "/graphql"
+# [vars]
+# GRAPHQL_PATH = "/graphql"

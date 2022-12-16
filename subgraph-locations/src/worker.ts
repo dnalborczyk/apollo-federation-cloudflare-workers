@@ -35,7 +35,7 @@ export default {
             // token,
           }
         },
-        path: environment.GRAPHQL_PATH,
+        // path: environment.GRAPHQL_PATH,
       })
     }
 

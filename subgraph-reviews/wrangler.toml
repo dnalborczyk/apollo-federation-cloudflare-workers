@@ -3,5 +3,5 @@ main = "./dist/index.js"
 
 compatibility_date = "2022-11-30"
 
-[vars]
-GRAPHQL_PATH = "/graphql"
+# [vars]
+# GRAPHQL_PATH = "/subgraph-reviews"
